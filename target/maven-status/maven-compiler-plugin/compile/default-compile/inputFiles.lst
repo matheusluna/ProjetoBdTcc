@@ -1,3 +1,4 @@
+D:\ADS2017\BDII\ProjetoBdTcc\src\main\java\conexoes\ConexaoRedis.java
 D:\ADS2017\BDII\ProjetoBdTcc\src\main\java\gerenciadores\GerenciadorDeUsuario.java
 D:\ADS2017\BDII\ProjetoBdTcc\src\main\java\converterInformacao\ConverterData.java
 D:\ADS2017\BDII\ProjetoBdTcc\src\main\java\servlets\Login.java
@@ -5,7 +6,6 @@ D:\ADS2017\BDII\ProjetoBdTcc\src\main\java\entidades\Tcc.java
 D:\ADS2017\BDII\ProjetoBdTcc\src\main\java\conexoes\ConnectionFactory.java
 D:\ADS2017\BDII\ProjetoBdTcc\src\main\java\dao\UsuarioDao.java
 D:\ADS2017\BDII\ProjetoBdTcc\src\main\java\fabricas\DaoFactoryIF.java
-D:\ADS2017\BDII\ProjetoBdTcc\src\main\java\servlets\ListarUsuarios.java
 D:\ADS2017\BDII\ProjetoBdTcc\src\main\java\entidades\ImagemDeRequisicao.java
 D:\ADS2017\BDII\ProjetoBdTcc\src\main\java\interfaces\UsuarioDaoIF.java
 D:\ADS2017\BDII\ProjetoBdTcc\src\main\java\entidades\Usuario.java

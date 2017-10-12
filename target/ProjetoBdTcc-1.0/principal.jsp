@@ -14,34 +14,7 @@
 
   <body>
 
-    <ul id="slide-out" class="side-nav">
-      <li><div class="user-view">
-        <div class="background">
-          <img src="img/paisagem.jpg">
-        </div>
-              <c:if test="${sessionScope.usuario != null}">
-                          
-                        <a href="#!user"><img class="circle" src=${sessaoFoto}></a>
-                        <a href="#!name">${sessaoUsuario}</a>
-                        <a href="#!email"><span class="white-text email">${sessaoEmail}</span></a>
-               </c:if>  
-      </div></li>
-      <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-      <li><a href="#!">Second Link</a></li>
-      <li><div class="divider"></div></li>
-      <li><a class="subheader">Subheader</a></li>
-      <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-    </ul>
-
-
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper cyan darken-4">
-          <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
-          <a href="#!" class="brand-logo">Logo</a>
-        </div>
-      </nav>
-    </div>
+      <jsp:include page="head.jsp"></jsp:include>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/plugin.js"></script>

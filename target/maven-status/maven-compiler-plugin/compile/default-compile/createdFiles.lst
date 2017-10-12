@@ -6,7 +6,6 @@ entidades\ImagemDeRequisicao.class
 fabricas\DaoFactoryBD.class
 converterInformacao\ConverterData.class
 interfaces\UsuarioDaoIF.class
-servlets\ListarUsuarios.class
 dao\UsuarioDao.class
 entidades\Tcc.class
 gerenciadores\GerenciadorDeUsuario.class
