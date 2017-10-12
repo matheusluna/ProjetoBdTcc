@@ -1,11 +1,14 @@
 
 package entidades;
 
+import java.io.File;
+
 /**
  *
  * @author Reginaldo
  */
 public class Tcc {
+    private String sessionId;
     private String titulo;
     private String autor;
     private String orientador;
@@ -13,12 +16,12 @@ public class Tcc {
     private String resumo;
     private int ano;
     private String area;
-    private String pdf;
+    private File pdf;
 
     public Tcc() {
     }
 
-    public Tcc(String titulo, String autor, String orientador, String palavrasChave, String resumo, int ano, String area, String pdf) {
+    public Tcc(String sessionId, String titulo, String autor, String orientador, String palavrasChave, String resumo, int ano, String area, File pdf) {
         this.titulo = titulo;
         this.autor = autor;
         this.orientador = orientador;
@@ -29,6 +32,14 @@ public class Tcc {
         this.pdf = pdf;
     }
 
+    public String getSessionId() {
+        return sessionId;
+    }
+
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
+    
     public String getTitulo() {
         return titulo;
     }
@@ -85,13 +96,15 @@ public class Tcc {
         this.area = area;
     }
 
-    public String getPdf() {
+    public File getPdf() {
         return pdf;
     }
 
-    public void setPdf(String pdf) {
+    public void setPdf(File pdf) {
         this.pdf = pdf;
     }
+
+    
     
     
     
