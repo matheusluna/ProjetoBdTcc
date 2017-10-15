@@ -3,6 +3,8 @@ package fabricas;
 
 import dao.UsuarioDao;
 import interfaces.UsuarioDaoIF;
+import dao.TccDao;
+import interfaces.TccDaoIF;
 
 /**
  *
@@ -17,5 +19,8 @@ public class DaoFactoryBD implements DaoFactoryIF{
         return new UsuarioDao();
     }
 
+    public TccDaoIF criaTccDao() {
+        return (TccDaoIF) new TccDao();
+    }
   
 }

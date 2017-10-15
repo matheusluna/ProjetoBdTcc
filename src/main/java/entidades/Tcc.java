@@ -8,7 +8,7 @@ import java.io.File;
  * @author Reginaldo
  */
 public class Tcc {
-    private String sessionId;
+    private int sessionId;
     private String titulo;
     private String autor;
     private String orientador;
@@ -16,12 +16,12 @@ public class Tcc {
     private String resumo;
     private int ano;
     private String area;
-    private File pdf;
+    private String pdf;
 
     public Tcc() {
     }
 
-    public Tcc(String sessionId, String titulo, String autor, String orientador, String palavrasChave, String resumo, int ano, String area, File pdf) {
+    public Tcc(int sessionId, String titulo, String autor, String orientador, String palavrasChave, String resumo, int ano, String area, String pdf) {
         this.titulo = titulo;
         this.autor = autor;
         this.orientador = orientador;
@@ -32,11 +32,11 @@ public class Tcc {
         this.pdf = pdf;
     }
 
-    public String getSessionId() {
+    public int getSessionId() {
         return sessionId;
     }
 
-    public void setSessionId(String sessionId) {
+    public void setSessionId(int sessionId) {
         this.sessionId = sessionId;
     }
     
@@ -96,11 +96,11 @@ public class Tcc {
         this.area = area;
     }
 
-    public File getPdf() {
+    public String getPdf() {
         return pdf;
     }
 
-    public void setPdf(File pdf) {
+    public void setPdf(String pdf) {
         this.pdf = pdf;
     }
 

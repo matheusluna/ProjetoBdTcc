@@ -1,6 +1,7 @@
 
 package fabricas;
 
+import interfaces.TccDaoIF;
 import interfaces.UsuarioDaoIF;
 
 /**
@@ -11,4 +12,5 @@ public interface DaoFactoryIF {
     
     public UsuarioDaoIF criaUsuarioDao();
    
+    public TccDaoIF criaTccDao();
 }

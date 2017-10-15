@@ -54,11 +54,11 @@
     <div id="modal1" class="modal">
       <div class="modal-content">
         <h4>Cadastro Tcc</h4>
-        <form action="index.html" method="post">
+        <form action="CadastrarTcc" enctype="multipart/form-data" method="post">
           <div class="row">
             <div class="input-field col s6">
               <input type="text" name="titulo" id="titulo" value="">
-              <label for="titulo">TÃ­tulo</label>
+              <label for="titulo">Título</label>
             </div>
             <div class="input-field col s6">
               <input type="text" name="autor" id="autor" value="">
@@ -71,13 +71,13 @@
               <label for="orientador">Orientador</label>
             </div>
             <div class="input-field col s6">
-              <input type="text" name="palavraChave" id="palavraChave" value="">
-              <label for="palavraChave">Palavras-chave</label>
+              <input type="text" name="palavrasChave" id="palavraChave" value="">
+              <label for="palavrasChave">Palavras-chave</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <textarea id="textarea1" name="resuno" class="materialize-textarea"></textarea>
+              <textarea id="textarea1" name="resumo" class="materialize-textarea"></textarea>
               <label for="textarea1">Resumo</label>
             </div>
           </div>
@@ -87,23 +87,23 @@
               <label for="ano">Ano</label>
             </div>
             <div class="input-field col s6">
-              <select>
-                <option value="Banco de Dados">Banco de Dados</option>
-                <option value="Engenharia de Software">Engenharia de Software</option>
-                <option value="Redes">Redes</option>
-                <option value="SeguranÃ§a">SeguranÃ§a</option>
-                <option value="Arquitetura de Sistemas">Arquitetura de Sistemas</option>
-                <option value="Hardware">Hardware</option>
-                <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
+              <select name="area" >
+                <option  value="Banco de Dados">Banco de Dados</option>
+                <option  value="Engenharia de Software">Engenharia de Software</option>
+                <option  value="Redes">Redes</option>
+                <option  value="SeguranÃ§a">Segurança</option>
+                <option  value="Arquitetura de Sistemas">Arquitetura de Sistemas</option>
+                <option  value="Hardware">Hardware</option>
+                <option  value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
               </select>
-              <label>Ãrea de conhecimento</label>
+              <label>Área de conhecimento</label>
             </div>
           </div>
           <div class="row">
             <div class="file-field input-field">
               <div class="btn">
                 <span>Tcc</span>
-                <input type="file">
+                <input type="file" name="pdf">
               </div>
               <div class="file-path-wrapper">
                 <input class="file-path validate" type="text">
