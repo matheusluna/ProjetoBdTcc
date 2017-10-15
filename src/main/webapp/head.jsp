@@ -57,27 +57,27 @@
         <form action="CadastrarTcc" enctype="multipart/form-data" method="post">
           <div class="row">
             <div class="input-field col s6">
-              <input type="text" name="titulo" id="titulo" value="">
+              <input type="text" name="titulo" id="titulo" value="${tcc.titulo}">
               <label for="titulo">Título</label>
             </div>
             <div class="input-field col s6">
-              <input type="text" name="autor" id="autor" value="">
+              <input type="text" name="autor" id="autor" value="${tcc.titulo}">
               <label for="autor">Autor</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input type="text" name="orientador" id="orientador" value="">
+              <input type="text" name="orientador" id="orientador" value="${tcc.titulo}">
               <label for="orientador">Orientador</label>
             </div>
             <div class="input-field col s6">
-              <input type="text" name="palavrasChave" id="palavraChave" value="">
+              <input type="text" name="palavrasChave" id="palavraChave" value="${tcc.palavrasChave}">
               <label for="palavrasChave">Palavras-chave</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <textarea id="textarea1" name="resumo" class="materialize-textarea"></textarea>
+              <textarea id="textarea1" name="resumo" class="materialize-textarea">${tcc.resumo}</textarea>
               <label for="textarea1">Resumo</label>
             </div>
           </div>

@@ -6,6 +6,7 @@
 package servlets;
 
 import entidades.LeitorPdf;
+import entidades.Tcc;
 import gerenciadores.GerenciadorDeTcc;
 import java.io.File;
 import java.io.IOException;
@@ -59,15 +60,6 @@ String a = request.getParameter("ano");
 int ano = Integer.parseInt(a);
 String area = request.getParameter("area");
 
-//                String titulo = itens.get(1).getString("UTF-8");
-//                String autor = itens.get(2).getString("UTF-8");
-//                String orientador  = itens.get(3).getString("UTF-8");
-//                String palavrasChave = itens.get(4).getString("UTF-8");                
-//                String resumo  = itens.get(6).getString("UTF-8");
-//                String a = itens.get(5).getString("UTF-8");
-//                int ano = Integer.parseInt(a);
-//                String area = itens.get(7).getString("UTF-8");
-
 String caminho = getServletContext().getRealPath("/tcc")+File.separator+"pdf";
 
 File caminhoUser = new File(caminho);
@@ -76,51 +68,43 @@ if(!caminhoUser.exists()) {
 }
 
 Part path = request.getPart("pdf");
-String cam = caminho+File.separator+path.getSubmittedFileName();
+String nomePdf = titulo;
+String cam = caminho+File.separator+nomePdf+ ".pdf";;
 path.write(cam);
 LeitorPdf leitor = new LeitorPdf(cam);
 String pdf = leitor.getText();
 
 
 try {
-    
-    
-    tccGer.adicionarTcc(titulo, autor, orientador, palavrasChave, resumo, ano, area, pdf);
-} catch (SQLException ex) {
+    tccGer.adicionarTccRedis(titulo, autor, orientador, palavrasChave, resumo, ano, area, pdf);
+}catch (Exception ex) {
     Logger.getLogger(CadastrarTcc.class.getName()).log(Level.SEVERE, null, ex);
 }
-
-
-
-//            } catch (FileUploadException ex) {
-//            Logger.getLogger(CadastrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (TikaException ex) {
-//                Logger.getLogger(CadastrarTcc.class.getName()).log(Level.SEVERE, null, ex);
-//            } catch (org.xml.sax.SAXException ex) {
-//                Logger.getLogger(CadastrarTcc.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-
-            } catch (TikaException ex) {
-                    Logger.getLogger(CadastrarTcc.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-                
-            catch (SAXException ex) {
-                Logger.getLogger(CadastrarTcc.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-                
-
-//            } catch (FileUploadException ex) {
-//            Logger.getLogger(CadastrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (TikaException ex) {
-//                Logger.getLogger(CadastrarTcc.class.getName()).log(Level.SEVERE, null, ex);
-//            } catch (org.xml.sax.SAXException ex) {
-//                Logger.getLogger(CadastrarTcc.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-
-        }
-        request.getRequestDispatcher("principal.jsp").forward(request, response);
-    }
-
+try {
+    
+    tccGer.adicionarTccMongo(titulo, autor, orientador, palavrasChave, resumo, ano, area, pdf);
+    request.setAttribute("mensagem", "<script>alert('Tcc salvo com sucesso')</script>");
+    request.setAttribute("tcc", null);
+    request.getRequestDispatcher("principal.jsp").forward(request, response);
+}catch (Exception ex) {
+    Tcc tcc = tccGer.retornaJson(titulo, autor, orientador, palavrasChave, resumo, ano, area, pdf);
+    request.setAttribute("tcc", tcc);
+    request.setAttribute("mensagem", "<script>alert('Não foi possível cadastrar o tcc!')</script>");
+    request.getRequestDispatcher("principal.jsp").forward(request, response);
+    Logger.getLogger(CadastrarTcc.class.getName()).log(Level.SEVERE, null, ex);
+    
 }
+
+
+ }   catch (TikaException ex) {
+        Logger.getLogger(CadastrarTcc.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (SAXException ex) {
+        Logger.getLogger(CadastrarTcc.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        request.getRequestDispatcher("principal.jsp").forward(request, response);
+ }
+
+    }       
+}
+
+

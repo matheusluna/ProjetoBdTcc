@@ -41,8 +41,8 @@ public class TccDao {
             DB db = mongoClient.getDB("tcc");
             
             DBCollection coll  = db.getCollection( "tccs" );
-            tcc.setSessionId(new ObjectId()._inc());
-            System.out.println(tcc.getSessionId());
+//            tcc.setSessionId(new ObjectId()._inc());
+//            System.out.println(tcc.getSessionId());
             coll.insert( new TccDBObject( tcc ) );
             
            // client.close();
